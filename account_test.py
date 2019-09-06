@@ -17,7 +17,7 @@ class TestAccount(unittest.TestCase):
         '''
         test_init test case to test if the object is initialized properly
         '''
-        self.assertEqual(self.new_account.user_name,"polla")
+        self.assertEqual(self.new_account.users_name,"polla")
         self.assertEqual(self.new_account.password,"polla12")
     def test_save_account(self):
         '''
@@ -58,12 +58,12 @@ def test_copy_user_name(self):
         '''
 
         self.new_account.save_account()
-        Account.test_copy_user_name("polla12")
+        Account.test_copy_users_name("polla12")
 
-        self.assertEqual(self.new_account.user_name,pyperclip.paste())
+        self.assertEqual(self.new_account.users_name,pyperclip.paste())
 
 
-def test_copy_account_name(self):
+def test_copy_credential_name(self):
         '''
         Test to confirm that we are copying the account_name address from a found credential
         '''
@@ -73,10 +73,11 @@ def test_copy_account_name(self):
 
         self.assertEqual(self.new_credential.account_name,pyperclip.paste())
 
-@classmethod
-def copy_user_name(cls,password):
-        account_found = Account.find_by_password(password)
-        pyperclip.copy(account_found.user_name)
+# @classmethod
+# def copy_user_name(cls,password):
+#         account_found = Account.find_by_password(password)
+#         pyperclip.copy(account_found.user_name)
+
 
 
 
