@@ -69,7 +69,7 @@ def test_copy_user_name(self):
 #         '''
 
 #         self.new_credential.save_credential()
-#         Credential.test_copy_account_name("pampam12")
+        Credential.test_copy_account_name("pampam12")
 
         self.assertEqual(self.new_credential.account_name,pyperclip.paste())
 
