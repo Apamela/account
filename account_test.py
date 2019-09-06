@@ -65,7 +65,7 @@ def test_copy_user_name(self):
 
 # def test_copy_account_name(self):
 #         '''
-#         Test to confirm that we are copying the account_name address from a found credential
+        Test to confirm that we are copying the account_name address from a found credential
         '''
 
         self.new_credential.save_credential()
