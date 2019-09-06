@@ -63,7 +63,7 @@ def test_copy_user_name(self):
         self.assertEqual(self.new_account.user_name,pyperclip.paste())
 
 
-# def test_copy_account_name(self):
+def test_copy_account_name(self):
         '''
         Test to confirm that we are copying the account_name address from a found credential
         '''
