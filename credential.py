@@ -16,6 +16,10 @@ class Credential:
         save_credential method saves credential objects into credential_list
         '''
         Credential.credential_list.append(self)
+@classmethod
+def copy_user_name(cls,password):
+        credential_found = Credential.find_by_password(password)
+        pyperclip.copy(credential_found.user_name)
 
 
 

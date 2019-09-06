@@ -73,5 +73,16 @@ def test_copy_account_name(self):
 
         self.assertEqual(self.new_credential.account_name,pyperclip.paste())
 
+@classmethod
+def copy_user_name(cls,password):
+        account_found = Account.find_by_password(password)
+        pyperclip.copy(account_found.user_name)
+
+
+
+
+
+
+
 if __name__ == '__main__':
     unittest.main()

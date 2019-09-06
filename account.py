@@ -15,3 +15,8 @@ class Account:
         save_account method saves account objects into account_list
         '''
         Account.account_list.append(self)
+@classmethod
+def copy_user_name(cls,password):
+        account_found = Account.find_by_password(password)
+        pyperclip.copy(account_found.user_name)
+
