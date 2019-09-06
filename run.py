@@ -11,3 +11,14 @@ def create_credential(fname,account_name,user_name,password):
     '''
     new_credential = Credential(fname,account_name,user_name,password)
     return new_credential
+def save_accounts(account):
+    '''
+    Function to save account
+    '''
+    account.save_account()
+def save_credentials(credential):
+    '''
+    Function to save credential
+    '''
+    credential.save_credential()
+
