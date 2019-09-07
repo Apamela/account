@@ -41,7 +41,7 @@ def display_credentials():
     Function that returns all the saved credentials
     '''
     return Credential.display_credentials()
-def del_credential(credential):
+def del_credentials(credential):
     '''
     Function to delete a credential
     '''
@@ -86,26 +86,6 @@ def main():
                             print("You dont seem to have any accounts saved yet")
                             print('\n')
 
-# elif short_code == 'fc':
-
-#     print("Enter the password you want to search for")
-
-#     search_ = input()
-#     if check_existing_accounts(search_password):
-#         search_account = find_account(search_password)
-#         print(f"{search_account.user_name} ")
-#         print('-' * 20)
-
-#      print(f"Password.......{search_account.password}")
-#      print(f"Email address.......{search_account.user_name}")
-#         else:
-#          print("That account does not exist")
-
-# elif short_code == "ex":
-#     print("Bye .......")
-#        break
-#        else:
-#     print("I really didn't get that. Please use the short codes")
 def main():
     print("Hello Welcome to your credential list. What is your name?")
     user_name = input()
@@ -153,25 +133,22 @@ def main():
                                     print("You dont seem to have any credentials saved yet")
                                     print('\n')
 
-                    # elif short_code == 'fc':
+                    elif short_code == 'fd':
 
-                    #         print("Enter the name you want to search for")
+                            if del_credentials():
+                                print("Here you can delete the credentials")
+                                print('\n')
 
-                    #         search_number = input()
-                    #         if check_existing_credentials(search_password):
-                    #                 search_credential = find_credential(search_password)
-                    #                 print(f"{search_credential.account_name} {search_credential.user_name}")
-                    #                 print('-' * 20)
+                                for credential in del_credentials():
+                                    print(f"{credential.account_name} {credential.user_name}.....{credential.password}")
+                                    print('\n')
+                            else: 
+                                    print('\n')
+                                    print("You dont seem to have any credentials saved yet")
+                                    print('\n')
 
-                    #                 print(f"User name.......{search_credential.credential_name}")
-                    #                 print(f"Password.......{search_credential.password}")
-                    #         else:
-                    #                 print("That credential does not exist")
 
-                    # elif short_code == "ex":
-                    #         print("Bye .......")
-                    #         break
-                    # else:
-                    #         print("I really didn't get that. Please use the short codes")
+                            
+                    
 if __name__ ==  '__main__':
     main()

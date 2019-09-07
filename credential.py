@@ -27,11 +27,12 @@ class Credential:
         method that returns the credentials list
         '''
         return cls.credential_list
-    # def check_existing_credentials(name):
-    #     '''
-    #     Function that check if a credential exists with that name and return a Boolean
-    #     '''
-    #     return Credential.credential_exist(name)
-
+    @classmethod
+    def del_credentials(cls):
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credential_list
+    
 
         
