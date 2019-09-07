@@ -16,13 +16,22 @@ class Credential:
         save_credential method saves credential objects into credential_list
         '''
         Credential.credential_list.append(self)
-@classmethod
-def copy_user_name(cls,password):
-        credential_found = Credential.find_by_password(password)
-        pyperclip.copy(credential_found.user_name)
+# @classmethod
+# def copy_user_name(cls,password):
+#         credential_found = Credential.find_by_password(password)
+#         pyperclip.copy(credential_found.user_name)
 
-
-
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credential_list
+    # def check_existing_credentials(name):
+    #     '''
+    #     Function that check if a credential exists with that name and return a Boolean
+    #     '''
+    #     return Credential.credential_exist(name)
 
 
         

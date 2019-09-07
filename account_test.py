@@ -52,7 +52,7 @@ class TestCredential(unittest.TestCase):
         '''
         self.new_credential.save_credential() # saving the new credential
         self.assertEqual(len(Credential.credential_list),1)
-def test_copy_user_name(self):
+    def test_copy_user_name(self):
         '''
         Test to confirm that we are copying the user_name address from a found account
         '''
@@ -63,7 +63,7 @@ def test_copy_user_name(self):
         self.assertEqual(self.new_account.users_name,pyperclip.paste())
 
 
-def test_copy_credential_name(self):
+    def test_copy_credential_name(self):
         '''
         Test to confirm that we are copying the account_name address from a found credential
         '''
