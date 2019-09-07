@@ -1,9 +1,17 @@
 ## Description
-this project it for creating the account and the credentials where anyone can keep or save there password of different accounts. 
-## instructions
-
-* Enter your credentials account_name
-* User your users_name
-* enter your passwoerd
-* When you finished you can even delete your account or your credential
-## 
+This project enables a user to store old accounts credentials and
+create new ones. the program also stores. Users get the option to come up with
+their own passwords or the program can generate one for them. the program further
+displays the user accounts and passwords upon being prompted.
+## Behavior Driven Development(BDD)
+| Given                 | When                       | Then                              |
+  | ----------------------|:--------------------------:|:---------------------------------:|
+  | allowed actions       | a user types in the action | the program fulfils the action    |
+##SetUp/Instructions
+   
+   * python3.6
+   * pyperclip
+## Technology Used
+* Python3.6
+## License
+   copyright(c)pamy
