@@ -28,7 +28,7 @@ class Credential:
         '''
         return cls.credential_list
     @classmethod
-    def del_credentials(cls):
+    def delele_credentials(credential):
         '''
         method that returns the credentials list
         '''

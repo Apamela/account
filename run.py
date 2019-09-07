@@ -45,7 +45,7 @@ def del_credentials(credential):
     '''
     Function to delete a credential
     '''
-    credential.delete_credential()
+    credential.delete_credentials()
 def main():
     print("Hello Welcome to your account list. What is your name?")
     user_name = input()
@@ -133,13 +133,13 @@ def main():
                                     print("You dont seem to have any credentials saved yet")
                                     print('\n')
 
-                    elif short_code == 'fd':
+                    elif short_code == 'del':
 
-                            if del_credentials():
-                                print("Here you can delete the credentials")
+                            if delete_credentials():
+                                print("Here is where you delete  all your credentials")
                                 print('\n')
 
-                                for credential in del_credentials():
+                                for credential in delete_credentials():
                                     print(f"{credential.account_name} {credential.user_name}.....{credential.password}")
                                     print('\n')
                             else: 
