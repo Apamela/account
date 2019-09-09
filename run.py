@@ -62,7 +62,7 @@ def main():
 
               if short_code == 'cc':
                       print("New Account")
-                      print("#"*40)
+                      print("-"*10)
 
                       print ("User name ....")
                       users_name = input()
@@ -75,7 +75,7 @@ def main():
                       print ('\n')
                       
               elif short_code == 'dd':
-                      print("#"40)
+                      
                            if display_accounts():
                                    print("Here is a list of all your accounts")
                                    print('\n')
