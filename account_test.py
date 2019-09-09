@@ -12,13 +12,13 @@ class TestAccount(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_account = Account("polla","polla12") # create account object
+        self.new_account = Account("polla","123") # create account object
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
         self.assertEqual(self.new_account.users_name,"polla")
-        self.assertEqual(self.new_account.password,"polla12")
+        self.assertEqual(self.new_account.password,"123")
     def test_save_account(self):
         '''
         test_save_account test case to test if the account object is saved into
@@ -72,7 +72,7 @@ class TestCredential(unittest.TestCase):
         Credential.test_copy_account_name("pampam12")
 
         self.assertEqual(self.new_credential.account_name,pyperclip.paste())
-
+    
 # @classmethod
 # def copy_user_name(cls,password):
 #         account_found = Account.find_by_password(password)

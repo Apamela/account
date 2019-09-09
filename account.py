@@ -21,3 +21,13 @@ class Account:
         method that returns the accounts list
         '''
         return cls.account_list
+        
+    def login_account(users_name, password):
+       """
+       account_check_me method to check if a certain user is in user_list or not
+       """
+       check_me = ""
+       for account in Account.account_list:
+           if(account.users_name == users_name and account.password == password):
+                check_me == account.users_name
+       return check_me

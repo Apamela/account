@@ -30,9 +30,15 @@ class Credential:
     @classmethod
     def delele_credentials(credential):
         '''
+
         method that returns the credentials list
         '''
         return cls.credential_list
-    
+    # def new_password(stringLength = 10):
+    #    '''
+    #    new_password method to generate a new password
+    #    '''
+    #    password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+    #    return ''.join(random.choice(password) for i in range(stringLength))
 
         

@@ -22,6 +22,12 @@ def del_account(account):
     Function to delete a account
     '''
     account.delete_account()
+def login_account(users_name,password):
+   """
+   login_account method to check a user and then sign in they exist
+   """
+   check_account = Account.login_account(users_name,password)
+   return check_account
 def create_credential(account_name,user_name,password):
     '''
     Function to create a new credential
@@ -43,24 +49,20 @@ def display_credentials():
     return Credential.display_credentials()
 def del_credentials(credential):
     '''
-    Function to delete a credential
+    Function that to delete a credential 
     '''
-    credential.delete_credentials()
+    return Credential.delete_credentials()
+
 def main():
-    print("Hello Welcome to your account list. What is your name?")
-    user_name = input()
-
-    print(f"Hello {user_name}. what would you like to do?")
-    print('\n')
-
+    print("&"*80)
     while True:
-              print("Use these short codes : cc - create a new account, dc - display accounts, fc -find a account, ex -exit the account list ")
+              print("Use these short codes :\n cc - create a new account, \n dd - display accounts,\nlg- login your account")
 
               short_code = input().lower()
 
               if short_code == 'cc':
                       print("New Account")
-                      print("-"*10)
+                      print("#"*40)
 
                       print ("User name ....")
                       users_name = input()
@@ -69,84 +71,79 @@ def main():
                       password= input()
                       save_accounts(create_account(users_name,password)) # create and save new account.
                       print ('\n')
-                      print(f"New Account {users_name} created")
+                      print(f"New Account {users_name} {password} created")
                       print ('\n')
-              elif short_code == 'dc':
-
+                      
+              elif short_code == 'dd':
+                      print("#"40)
                            if display_accounts():
                                    print("Here is a list of all your accounts")
                                    print('\n')
 
                                    for account in display_accounts():
-                                            print(f"{account.password}")
+                                            print(f"Username:{account.users_name} \n Password:{account.password} ")
 
                                             print('\n')
                            else:
                             print('\n')
                             print("You dont seem to have any accounts saved yet")
                             print('\n')
+              elif short_code=='lg':
+                                 user_name1=input ("users_name:")
+                                 
+                                #  login=login_account(users_name,password)
+                                 if user_name1!= users_name:
+                                         continue
+                                
+                                 else:
+                                     print()
+                                     password1=input ("password:")
+                                     if password1 !=password :
+                                            continue
+                                     else:
+                                             pass
 
-def main():
-    print("Hello Welcome to your credential list. What is your name?")
-    user_name = input()
+                                             while True:                
+                                                print("Use these short codes : cc - create a new credential, dc - display credentials")
 
-    print(f"Hello {user_name}. what would you like to do?")
-    print('\n')
+                                                short_code = input().lower()
 
-    while True:
-                    print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, ex -exit the credential list ")
+                                                if short_code == 'cc':
+                                                                print("New Credential")
+                                                                print("-"*10)
 
-                    short_code = input().lower()
+                                                                print ("Account name ....")
+                                                                account_name = input()
 
-                    if short_code == 'cc':
-                            print("New Credential")
-                            print("-"*10)
+                                                                print("User name...")
+                                                                user_name = input()
 
-                            print ("Account name ....")
-                            account_name = input()
+                                                                print("Password ...")
+                                                                password = input()
 
-                            print("User name...")
-                            user_name = input()
+                                                        
 
-                            print("Password ...")
-                            password = input()
+                                                                save_credentials(create_credential(account_name,user_name,password)) # create and save new credential.
+                                                                print ('\n')
+                                                                print(f"New Credential {account_name} {user_name} created")
+                                                                print ('\n')
 
-                    
+                                                elif short_code == 'dc':
 
-                            save_credentials(create_credential(account_name,user_name,password)) # create and save new credential.
-                            print ('\n')
-                            print(f"New Credential {account_name} {user_name} created")
-                            print ('\n')
+                                                        if display_credentials():
+                                                                print("Here is a list of all your credentials")
+                                                                print('\n')
 
-                    elif short_code == 'dc':
+                                                                for credential in display_credentials():
+                                                                    print(f"Account name:{credential.account_name}\n Username: {credential.user_name}\n Password:{credential.password}")
+                                               
+                                                else:
+                                                                print('\n')
+                                                                print("You dont seem to have any credentials saved yet")
+                                                                print('\n')
 
-                            if display_credentials():
-                                    print("Here is a list of all your credentials")
-                                    print('\n')
-
-                                    for credential in display_credentials():
-                                            print(f"{credential.account_name} {credential.user_name} .....{credential.password}")
-
-                                    print('\n')
-                            else:
-                                    print('\n')
-                                    print("You dont seem to have any credentials saved yet")
-                                    print('\n')
-
-                    elif short_code == 'del':
-
-                            if delete_credentials():
-                                print("Here is where you delete  all your credentials")
-                                print('\n')
-
-                                for credential in delete_credentials():
-                                    print(f"{credential.account_name} {credential.user_name}.....{credential.password}")
-                                    print('\n')
-                            else: 
-                                    print('\n')
-                                    print("You dont seem to have any credentials saved yet")
-                                    print('\n')
-
+                                       
+                
 
                             
                     
