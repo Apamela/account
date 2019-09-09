@@ -7,6 +7,7 @@ displays the user accounts and passwords upon being prompted.
 | Given                 | When                       | Then                              |
   | ----------------------|:--------------------------:|:---------------------------------:|
   | allowed actions       | a user types in the action | the program fulfils the action    |
+  
 ##SetUp/Instructions
    
    * python3.6
